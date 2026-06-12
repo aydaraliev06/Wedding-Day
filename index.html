@@ -16,6 +16,17 @@
   html,body{font-family:'Georgia','Times New Roman',serif;background:var(--cream);color:var(--text);}
   .phone{max-width:480px;margin:0 auto;overflow:hidden;}
 
+  #overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--cream);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 9999;
+  }
+  #playBtn {
+    padding: 20px 40px; font-size: 18px; cursor: pointer;
+    background-color:var(--sage); color: #fff;
+    border: none; border-radius: 30px; font-family: sans-serif;
+  }
 
   .hero{
     position:relative;
@@ -23,12 +34,12 @@
     color:#fff;
     text-align:center;
     padding:60px 20px 90px;
-    border-radius:0 0 50% 50% / 0 0 60px 60px;
+    border-radius:0 0 50% 50% / 0 0 80px 80px;
   }
   .hero .date{letter-spacing:4px;font-size:14px;opacity:.85;}
-  .hero h1{
+  .hero h2{
     font-family:'Playfair Display','Georgia',serif;
-    font-size:42px;
+    font-size:38px;
     font-weight:400;
     margin:14px 0 30px;
     letter-spacing:2px;
@@ -36,11 +47,10 @@
   .hero .photo{
     width:240px;height:240px;border-radius:50%;
     margin:0 auto;
-    background:#cfd6c8 url('image/foto\ 3.jpg') center/cover;
+    background:#cfd6c8 url('image/foto 3.jpg') center/cover;
     border:6px solid rgba(255,255,255,.5);
   }
   .heart{font-size:20px;margin-top:18px;opacity:.8;}
-
 
   .intro{
     text-align:center;
@@ -53,7 +63,6 @@
     width:60px;height:1px;background:var(--gold);margin:24px auto 0;
   }
 
-
   .when{
     background:var(--sage);
     color:#fff;
@@ -65,35 +74,13 @@
     font-family:'Playfair Display',serif;
     font-size:30px;letter-spacing:3px;font-weight:400;margin-bottom:24px;
   }
- 
- 
+  
   .photo-section{
-    background:#cfd6c8 url('image/foto\ 2.jpg') center/cover;
+    background:#cfd6c8 url('image/foto 2.jpg') center/cover;
     height:450px;
-    /* border-radius:0 0 70px 70px; */
     position:relative;
   }
-
-
-  .location{
-    text-align:center;padding:50px 24px;
-  }
-  .location h2{
-    font-family:'Playfair Display',serif;
-    font-size:30px;letter-spacing:3px;font-weight:400;margin-bottom:20px;
-  }
-  .location p{font-size:14px;line-height:1.9;letter-spacing:1px;}
-  .location .addr{margin-top:18px;font-weight:600;letter-spacing:2px;}
-
- 
-  .dresscode{
-    background:#fff;padding:60px 24px;text-align:center;
-  }
-  .dresscode h2{
-    font-family:'Playfair Display',serif;font-size:26px;letter-spacing:6px;font-weight:400;margin-bottom:24px;text-transform:uppercase;
-  }
- 
-
+  
   .rsvp{
     background:var(--sage);
     color:#fff;
@@ -103,109 +90,89 @@
   }
   .rsvp h3{font-family:'Playfair Display',serif;font-size:24px;letter-spacing:3px;font-weight:400;margin-bottom:14px;}
   .rsvp p{font-size:14px;line-height:1.8;opacity:.9;margin-bottom:24px;}
-  .btn{
-    display:inline-block;background:#fff;color:var(--sage-dark);
-    padding:14px 40px;border-radius:30px;text-decoration:none;
-    letter-spacing:3px;font-size:12px;font-weight:700;text-transform:uppercase;
-    border:none;cursor:pointer;
-  }
+  
   .countdown{display:flex;justify-content:center;gap:16px;margin:30px 0;}
   .countdown div{font-size:24px;font-weight:700;}
   .countdown span{display:block;font-size:11px;letter-spacing:2px;opacity:.7;font-weight:400;}
 
-  /* DETAILS */
   .details{padding:60px 24px;text-align:center;}
   .details h2{font-family:'Playfair Display',serif;font-size:32px;letter-spacing:3px;font-weight:400;margin-bottom:34px;}
   .block{margin-bottom:34px;}
-  .block .label{letter-spacing:5px;font-size:12px;color:var(--gold);margin-bottom:10px;text-transform:uppercase;}
-  .block p{font-size:14px;line-height:1.9;}
   .divider{width:40px;height:1px;background:#ccc;margin:34px auto;}
 
   .final{
-    background:var(--sage) url('image/foto\ 1.jpg') center/cover;
+    background:var(--sage) url('image/foto 1.jpg') center/cover;
     background-blend-mode:multiply;
     color:#fff;text-align:center;
     padding:80px 24px;border-radius:70px 70px 0 0;
   }
   .final h2{font-family:'Playfair Display',serif;font-size:34px;letter-spacing:5px;font-weight:400;}
-  .final .heart{margin-top:20px;}
 </style>
 </head>
 <body>
+
+
+<div id="overlay">
+    <button id="playBtn">Туйга Таклиф этамиз</button>
+</div>
+
 <div class="phone">
-
-
   <div class="hero">
-    <h1>ТУЙ ТАКЛИФНОМАСИ</h1>
+    <h2>ТУЙ  ТАКЛИФНОМАСИ</h2>
     <div class="photo"></div>
     <div class="heart">♡</div>
   </div>
 
-
   <div class="intro">
-    Ассалому алайкум, мухтарам ва кадрли мехмонимиз!
-Сизни ва оилангиз аьзоларини фарзандларимиз
-Роза хамда Бахромларнинг никох, туйлари
-муносабати билан ёзиладиган туй
-дастурхонимизга ва кувончли кунимизга
-лутфан таклиф этамиз.
+    Ассалому алейкум, мухтарам ва қадрли мехмонимиз!
+    Сизни ва оилангиз аьзоларини фарзандларимиз
+    Роза хамда Бахромларнинг никох туйлари
+    муносабати билан ёзиладиган туй
+    дастурхонимизга ва кувончли кунимизга
+    лутфан таклиф этамиз.
     <div class="line"></div>
   </div>
 
-
   <div class="when">
-    <h2>НИКОХ, ОШИ:</h2>
-    <div class="month">Вакти: 27 июнь, соат 07:00 да</div>
-    <table class="cal">
-      <h4>Манзил: Туркистон шахри, Х. Башиков кучаси, 29-хонадон.</h4>
-    </table>
+    <h2>НИКОХ ОШИ:</h2>
+    <div class="month">Вақти: 27 июнь, соат 07:00 да</div>
+    <h4>Манзил: Туркистон шахри, Х. Башиков кучаси, 29-хонадон.</h4>
     <div class="heart" style="margin-top:30px;">♡</div>
   </div>
 
-
   <div class="photo-section"></div>
 
-
-
   <div class="rsvp">
-    <h3>КИЗ ОКШОМИ:</h3>
-    <p>Вакти: 28 июнь, соат 20:00 да.Манзил: «Байтерек» салтанатлар саройи.</p>
-
-
-
+    <h3>ҚИЗ ОҚШОМИ:</h3>
+    <p>Вақти: 28 июнь, соат 20:00 да. Манзил: «Байтерек» салтанат саройи.</p>
     <div class="countdown" id="countdown">
-      <div id="d">--<span>КҮН</span></div>
-      <div id="h">--<span>САҺ</span></div>
+      <div id="d">--<span>КУН</span></div>
+      <div id="h">--<span>СОАТ</span></div>
       <div id="m">--<span>МИН</span></div>
       <div id="s">--<span>СЕК</span></div>
     </div>
   </div>
 
-  
   <div class="details">
     <div class="block">
-      <h4>Сизнинг ташрифингиз хонадонимизга чексиз кувонч ва шараф багишлайди!</h4>
+      <h4>Сизнинг ташрифингиз хонадонимизга чексиз қувонч ва шараф бағишлайди!</h4>
     </div>
-
     <div class="divider"></div>
-
     <div class="block">
-      <h5>Хурмат ва эхтиром билан: <br>
-        Улубек ва Дилфуза</h5>
-      <br>
+      <h5>Хурмат ва эхтиром билан: <br> Улуғбек ва Дилфуза</h5>
     </div>
   </div>
-
 
   <div class="final">
     <h2>Сизларни кутип қоламиз.</h2>
     <div class="heart">♡</div>
   </div>
-
 </div>
 
+<!-- song -->
+<audio id="bg-music" src="song/qizim.m4a" loop></audio> 
 <script>
-  const weddingDate = new Date("2026-06-28T20:00:00").getTime();
+  const weddingDate = new Date("2026-06-28T20:00:00").getTime(); // data
   function update(){
     const now = new Date().getTime();
     let diff = weddingDate - now;
@@ -221,16 +188,15 @@
   }
   update();
   setInterval(update,1000);
-</script>
-<!-- song -->
-<audio id="bg-music" src="song/qizim.m4a" loop></audio>
-<script>
   const music = document.getElementById('bg-music');
-  music.volume = 0.1; // gromkost
-  document.addEventListener('click', function startMusic(){
-    music.play().catch(()=>{});
-    document.removeEventListener('click', startMusic);
-  }, { once: true });
+  const playBtn = document.getElementById('playBtn');
+  const overlay = document.getElementById('overlay');
+
+  playBtn.addEventListener('click', () => {
+    music.volume = 0.1; //song gromkost
+    music.play();
+    overlay.style.display = 'none';
+  });
 </script>
 </body>
 </html>
