@@ -16,16 +16,32 @@
   html,body{font-family:'Georgia','Times New Roman',serif;background:var(--cream);color:var(--text);}
   .phone{max-width:480px;margin:0 auto;overflow:hidden;}
 
+ /* animation */
+  @keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(111, 125, 110, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(111, 125, 110, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(111, 125, 110, 0); }
+  }
+
+ /* slide */
   #overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: var(--cream);
     display: flex; justify-content: center; align-items: center;
     z-index: 9999;
+    transition: transform 0.8s ease-in-out, opacity 0.8s ease;
   }
+  
   #playBtn {
     padding: 20px 40px; font-size: 18px; cursor: pointer;
     background-color:var(--sage); color: #fff;
     border: none; border-radius: 30px; font-family: sans-serif;
+    animation: pulse 2s infinite; /* Ліпілдеуді қосу */
+  }
+
+  .slide-up {
+    transform: translateY(-100%);
+    opacity: 0;
   }
 
   .hero{
@@ -139,7 +155,6 @@
     <h4>Манзил: Туркистон шахри,<br>Х.Башиков кучаси, 29-хонадон.</h4>
     <div class="heart" style="margin-top:30px;">♡</div>
   </div>
-
   <div class="photo-section"></div>
 
   <div class="rsvp">
@@ -168,11 +183,10 @@
     <div class="heart">♡</div>
   </div>
 </div>
-
 <!-- song -->
 <audio id="bg-music" src="song/qizim.m4a" loop></audio> 
 <script>
-  const weddingDate = new Date("2026-06-28T20:00:00").getTime(); // data
+  const weddingDate = new Date("2026-06-28T20:00:00").getTime();
   function update(){
     const now = new Date().getTime();
     let diff = weddingDate - now;
@@ -188,14 +202,19 @@
   }
   update();
   setInterval(update,1000);
+
   const music = document.getElementById('bg-music');
   const playBtn = document.getElementById('playBtn');
   const overlay = document.getElementById('overlay');
 
   playBtn.addEventListener('click', () => {
-    music.volume = 0.1; //song gromkost
+    music.volume = 0.1; //gromcost
     music.play();
-    overlay.style.display = 'none';
+
+    overlay.classList.add('slide-up');
+    setTimeout(() => {
+        overlay.style.display = 'none';
+    }, 800);
   });
 </script>
 </body>
